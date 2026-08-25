@@ -9,7 +9,7 @@ def load_logistic_model():
     scaler = joblib.load(LOGISTIC_SCALER_PATH)
 
     
-    return scaler, model
+    return model, scaler
 
 
 
