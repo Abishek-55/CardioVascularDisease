@@ -13,7 +13,7 @@ st.header('Logistic Page')
 
 features, scaler, model, Y_pred, cr, cm =logistic_cardio_predict()
 
-API_URL = 'http://127.0.0.1:8000'
+API_URL = 'https://cardiovasculardisease-utej.onrender.com/predict_cardio'
 
 age = st.sidebar.slider(
     'Age',
@@ -163,7 +163,7 @@ if st.button ('Predict Cardio'):
         "active": active
     }
     try:
-        response = requests.post(f"{API_URL}/predict_cardio", json=payload)
+        response = requests.post(f"{API_URL}", json=payload)
         
         if response.status_code == 200:
             result = response.json()
